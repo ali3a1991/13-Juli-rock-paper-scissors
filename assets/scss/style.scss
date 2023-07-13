@@ -152,14 +152,11 @@ h5{
 a{
     display: block;
     color: orange;
-    border: none;
-    background-color: initial;
     letter-spacing: 3px;
     transition: all 100ms ease-in-out;
     
     &:hover{
         transform: scale(1.2);
         letter-spacing: 4px;
-        cursor: pointer;
     }
 }
