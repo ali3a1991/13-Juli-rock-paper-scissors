@@ -55,58 +55,59 @@ function play(event){
         }
         
         else if(event.currentTarget.id === "rock" && compPlay === "paper"){
+            report.innerHTML = '(user) <i class="fa-solid fa-hand-fist fa-rotate-90"></i> <span> VS </span> <i class="fa-solid fa-hand"></i> (comp) <p class="lose">YOU lOSE</p>'
             rock.style.backgroundColor = "red"
             paper.style.backgroundColor = "rgb(55, 54, 54)";
             scissors.style.backgroundColor = "rgb(55, 54, 54)";
             compWin ++
-            report.textContent = "Paper (comp) beats Rock (user). YOU lOSE"
         }
         
         else if(event.currentTarget.id === "rock" && compPlay === "scissors"){
+            report.innerHTML = '(user) <i class="fa-solid fa-hand-fist fa-rotate-90"></i> <span> VS </span> <i class="fa-solid fa-hand-peace fa-rotate-270"></i> (comp) <p class="win">YOU WIN</p>'
             rock.style.backgroundColor = "green";
             paper.style.backgroundColor = "rgb(55, 54, 54)";
-            scissors.style.backgroundColor = "rgb(55, 54, 54)";            userWin ++
-            report.textContent = "Rock (user) beats Scissors (comp). YOU WIN"
+            scissors.style.backgroundColor = "rgb(55, 54, 54)";           
+            userWin ++
         }
         
         else if(event.currentTarget.id === "paper" && compPlay === "rock"){
+            report.innerHTML = '(user) <i class="fa-solid fa-hand"></i> <span> VS </span> <i class="fa-solid fa-hand-fist fa-rotate-270"></i> (comp) <p class="win">YOU WIN</p>'
             rock.style.backgroundColor = "rgb(55, 54, 54)";
             paper.style.backgroundColor = "green";
             scissors.style.backgroundColor = "rgb(55, 54, 54)";
             userWin ++
-            report.textContent = "Paper (user) beats Rock (comp). YOU WIN"
         }
         
         else if(event.currentTarget.id === "paper" && compPlay === "scissors"){
+            report.innerHTML = '(user) <i class="fa-solid fa-hand"></i> <span> VS </span> <i class="fa-solid fa-hand-peace fa-rotate-270"></i> (comp) <p class="lose">YOU LOSE</p>'
             rock.style.backgroundColor = "rgb(55, 54, 54)";
             paper.style.backgroundColor = "red";
             scissors.style.backgroundColor = "rgb(55, 54, 54)";
             compWin ++
-            report.textContent = "Scissors (comp) beats Paper (user). YOU lOSE"
         }
         
         else if(event.currentTarget.id === "scissors" && compPlay === "paper"){
+            report.innerHTML = '(user) <i class="fa-solid fa-hand-peace fa-rotate-90"></i> <span> VS </span> <i class="fa-solid fa-hand"></i> (comp) <p class="win">YOU WIN</p>'
             rock.style.backgroundColor = "rgb(55, 54, 54)";
             paper.style.backgroundColor = "rgb(55, 54, 54)";
             scissors.style.backgroundColor = "green";
             userWin ++
-            report.textContent = "Scissors (user) beats Paper (comp). YOU WIN"
         }
         
         else if(event.currentTarget.id === "scissors" && compPlay === "rock"){
+            report.innerHTML = '(user) <i class="fa-solid fa-hand-peace fa-rotate-90"></i> <span> VS </span> <i class="fa-solid fa-hand-fist fa-rotate-270"></i> (comp) <p class="lose">YOU LOSE</p>'
             rock.style.backgroundColor = "rgb(55, 54, 54)";
             paper.style.backgroundColor = "rgb(55, 54, 54)";
             scissors.style.backgroundColor = "red";
             compWin ++
-            report.textContent = "Rock (comp) beats Scissors (user). YOU lOSE"
         }
     }
 
     if(roundNumber == round){
         if (userWin > compWin) {
-            report.textContent = "The user wins"
+            report.innerHTML = 'The user wins <i class="fa-regular fa-face-laugh-beam fa-xl" style="color: #289f40;"></i>'
         }else if (userWin < compWin) {
-            report.textContent = "The comp wins"
+            report.innerHTML = 'The comp wins <i class="fa-regular fa-face-sad-tear fa-xl" style="color: #ff0000;"></i>'
         }else{
             report.textContent = "Equaled"
         }

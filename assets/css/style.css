@@ -15,7 +15,7 @@ body {
 main {
   background-color: rgb(55, 54, 54);
   width: 500px;
-  height: 600px;
+  height: 620px;
   text-align: center;
   border-radius: 10px;
   overflow: hidden;
@@ -91,11 +91,25 @@ main {
 }
 
 .report {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .report h1 {
   line-height: 30px;
   font-weight: 500;
+}
+.report span {
+  color: red;
+  margin-inline: 15px;
+}
+.report .lose {
+  color: red;
+}
+.report .win {
+  color: rgb(3, 197, 3);
 }
 
 .play_buttons {
@@ -131,14 +145,17 @@ main {
 
 h5 {
   font-weight: 400;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 a {
   display: block;
+  width: -moz-fit-content;
+  width: fit-content;
   color: orange;
   letter-spacing: 3px;
   transition: all 100ms ease-in-out;
+  margin-inline: auto;
 }
 a:hover {
   transform: scale(1.2);
