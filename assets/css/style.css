@@ -134,16 +134,16 @@ h5 {
   margin-bottom: 50px;
 }
 
-input[type=button] {
+a {
+  display: block;
   color: orange;
   border: none;
   background-color: initial;
-  letter-spacing: 2px;
-  text-decoration: underline;
+  letter-spacing: 3px;
   transition: all 100ms ease-in-out;
 }
-input[type=button]:hover {
-  font-size: 15px;
-  letter-spacing: 3px;
+a:hover {
+  transform: scale(1.2);
+  letter-spacing: 4px;
   cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
