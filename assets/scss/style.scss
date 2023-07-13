@@ -1,0 +1,165 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+main{
+    background-color: rgb(55, 54, 54);
+    width: 500px;
+    height: 600px;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 20px 7px;
+}
+
+.game_name{
+    background-color: white;
+    line-height: 50px;
+
+    h1{
+        color: rgb(55, 54, 54);
+        word-spacing: 10px;
+    }
+}
+
+.rounds{
+    border: 2px solid white;
+    width: 220px;
+    margin: 30px auto;
+    padding: 10px;
+    height: 100px;
+
+    p{
+        margin-bottom: 10px;
+    }
+
+    article{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        text-align: left;
+        row-gap: 10px;
+        padding-inline: 30px;
+
+        h1{
+            line-height: 50px;
+            font-size: 50px;
+        }
+    
+        span{
+            margin-inline: 10px;
+        }
+
+        div{
+            width: 40%;
+        }
+    }
+}
+
+.live_result{
+    border: 2px solid white;
+    width: 220px;
+    margin: 30px auto;
+    padding: 10px;
+    position: relative;
+
+    .tag{
+        background-color: tomato;
+        position: absolute;
+    }
+
+    .tag:nth-of-type(1){
+        top: 50%;
+        left: -10%;
+        transform: translateY(-50%);
+    }
+
+    .tag:nth-of-type(2){
+        top: 50%;
+        right: -10%;
+        transform: translateY(-50%);
+    }
+
+    h1{
+        line-height: 50px;
+        font-size: 50px;
+    }
+
+    span{
+        margin-inline: 10px;
+    }
+}
+
+.report{
+    margin-bottom: 30px;
+
+    h1{
+        line-height: 30px;
+        font-weight: 500;
+    }
+}
+
+.play_buttons{
+    height: 70px;
+    width: 220px;
+    margin: 30px auto 40px auto;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 10px;
+    align-items: center;
+
+    div{
+        border: 2px solid white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        transition: all 100ms ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 80%;
+
+        &:hover{
+            transform: scale(1.2);
+            cursor: pointer;
+            opacity: 100%;
+        }
+
+        i{
+            color: white;
+            font-size: 30px;
+        }
+    }
+}
+
+h5{
+    font-weight: 400;
+    margin-bottom: 50px;
+}
+
+input[type="button"]{
+    color: orange;
+    border: none;
+    background-color: initial;
+    letter-spacing: 2px;
+    text-decoration: underline;
+    transition: all 100ms ease-in-out;
+    
+    &:hover{
+        font-size: 15px;
+        letter-spacing: 3px;
+        cursor: pointer;
+    }
+}

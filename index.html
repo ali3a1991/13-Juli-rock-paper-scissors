@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <section class="game_name">
+            <h1>Rock Paper Scissors</h1>
+        </section>
+
+        <section class="rounds">
+            <p>how many rounds?</p>
+            <article id="rounds_view">
+                <div>
+                    <input type="radio" id="five_rounds" name="rounds" checked>
+                    <label for="five_rounds">5</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="ten_rounds" name="rounds">
+                    <label for="ten_rounds">10</label><br>
+                </div>
+
+                <div>
+                    <input type="radio" id="fifteen_rounds" name="rounds">
+                    <label for="fifteen_rounds">15</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="twenty_rounds" name="rounds">
+                    <label for="twenty_rounds">20</label>
+                </div>
+            </article>
+        </section>
+
+        <section class="live_result">
+            <p class="tag">USER</p>
+            <h1><span id="user"></span>:<span id="comp"></span></h1>
+            <p class="tag">COMP</p>
+        </section>
+
+        <section class="report">
+            <h1 id="report">Let's play</h1>
+        </section>
+
+        <section class="play_buttons">
+            <div id="rock"><i class="fa-solid fa-hand-fist fa-rotate-90"></i></div>
+            <div id="paper"><i class="fa-solid fa-hand"></i></div>
+            <div id="scissors"><i class="fa-solid fa-hand-peace fa-rotate-90"></i></div>
+        </section>
+
+        <h5>MAKE YOUR MOVE.</h5>
+
+        <input type="button" value="restart" id="restart">
+    </main>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
