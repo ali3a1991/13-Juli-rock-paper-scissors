@@ -148,16 +148,19 @@ h5 {
   margin-bottom: 20px;
 }
 
-a {
+#restart {
   display: block;
+  background-color: initial;
+  border: none;
   width: -moz-fit-content;
   width: fit-content;
   color: orange;
   letter-spacing: 3px;
   transition: all 100ms ease-in-out;
   margin-inline: auto;
+  cursor: pointer;
 }
-a:hover {
+#restart:hover {
   transform: scale(1.2);
   letter-spacing: 4px;
 }/*# sourceMappingURL=style.css.map */

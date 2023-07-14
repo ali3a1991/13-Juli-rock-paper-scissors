@@ -1,11 +1,8 @@
 "use strict"
 
 // ============= Rounds
-const roundsView = document.getElementById('rounds_view')
-const fiveRounds = document.getElementById('five_rounds');
-const tenRounds = document.getElementById('ten_rounds');
-const fifteenRounds = document.getElementById('fifteen_rounds');
-const twentyRounds = document.getElementById('twenty_rounds');
+const roundsView = document.getElementById('rounds_view');
+const resetRoundView = roundsView.innerHTML;
 
 // ============= Live Result
 const user = document.getElementById('user');
@@ -21,19 +18,22 @@ const scissors = document.getElementById('scissors');
 
 // ============= Restart Button
 const restart = document.getElementById('restart');
+
 let roundNumber = 0;
 let compWin = 0;
 let userWin = 0;
-user.textContent = userWin;
-comp.textContent = compWin;
+let round = 0;
 
 
 
-function play(event){
-    let round = 0;
-    const compArray = ["rock", "paper", "scissors"]
-    let compPlay = compArray[Math.floor(Math.random() * 3)];
-    
+
+
+const roundFunction = () => {
+    const fiveRounds = document.getElementById('five_rounds');
+    const tenRounds = document.getElementById('ten_rounds');
+    const fifteenRounds = document.getElementById('fifteen_rounds');
+    const twentyRounds = document.getElementById('twenty_rounds');
+
     if (fiveRounds.checked === true) {
         round = 5;
     }else if(tenRounds.checked === true){
@@ -43,10 +43,16 @@ function play(event){
     }else if(twentyRounds.checked === true){
         round = 20;
     }
-    
+}
+
+
+function play(event){
+    const compArray = ["rock", "paper", "scissors"]
+    let compPlay = compArray[Math.floor(Math.random() * 3)];
+
     if (roundNumber < round) {
         roundsView.innerHTML = `<h1><span>${roundNumber += 1}</span>/<span>${round}</span></h1>`
-
+        
         if (event.currentTarget.id === compPlay) {
             report.textContent = `It was a draw! You both chose ${compPlay}`
             rock.style.backgroundColor = "rgb(55, 54, 54)";
@@ -102,7 +108,7 @@ function play(event){
             compWin ++
         }
     }
-
+    
     if(roundNumber == round){
         if (userWin > compWin) {
             report.innerHTML = 'The user wins <i class="fa-regular fa-face-laugh-beam fa-xl" style="color: #289f40;"></i>'
@@ -114,9 +120,28 @@ function play(event){
     }
     user.textContent = userWin;
     comp.textContent = compWin;
+
 }
 
+rock.addEventListener("click", roundFunction);
+paper.addEventListener("click", roundFunction);
+scissors.addEventListener("click", roundFunction);
 rock.addEventListener("click", play);
 paper.addEventListener("click", play);
 scissors.addEventListener("click", play);
+
+restart.addEventListener("click" , () => {
+    roundNumber = 0;
+    compWin = 0;
+    userWin = 0;
+    user.textContent = userWin;
+    comp.textContent = compWin;
+    round = 0;
+    rock.style.backgroundColor = "rgb(55, 54, 54)";
+    paper.style.backgroundColor = "rgb(55, 54, 54)";
+    scissors.style.backgroundColor = "rgb(55, 54, 54)";
+    report.innerHTML = "Let's play";
+    roundsView.innerHTML = resetRoundView;
+})
+
 
