@@ -111,6 +111,9 @@ main {
 .report .win {
   color: rgb(3, 197, 3);
 }
+.report .equal {
+  color: yellow;
+}
 
 .play_buttons {
   height: 70px;

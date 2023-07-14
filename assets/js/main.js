@@ -24,10 +24,6 @@ let compWin = 0;
 let userWin = 0;
 let round = 0;
 
-
-
-
-
 const roundFunction = () => {
     const fiveRounds = document.getElementById('five_rounds');
     const tenRounds = document.getElementById('ten_rounds');
@@ -45,16 +41,23 @@ const roundFunction = () => {
     }
 }
 
-
 function play(event){
     const compArray = ["rock", "paper", "scissors"]
     let compPlay = compArray[Math.floor(Math.random() * 3)];
 
     if (roundNumber < round) {
         roundsView.innerHTML = `<h1><span>${roundNumber += 1}</span>/<span>${round}</span></h1>`
-        
+
+        let icon;
         if (event.currentTarget.id === compPlay) {
-            report.textContent = `It was a draw! You both chose ${compPlay}`
+            if(compPlay === "rock"){
+                icon = '<i class="fa-solid fa-hand-fist fa-rotate-90"></i>'
+            }else if(compPlay === "paper"){
+                icon = '<i class="fa-solid fa-hand"></i>'
+            }else{
+                icon = '<i class="fa-solid fa-hand-peace fa-rotate-90"></i>'
+            }
+            report.innerHTML = `(user) ${icon} <span> VS </span> ${icon} (comp) <p class="equal">EQUAL</p>`
             rock.style.backgroundColor = "rgb(55, 54, 54)";
             paper.style.backgroundColor = "rgb(55, 54, 54)";
             scissors.style.backgroundColor = "rgb(55, 54, 54)";
@@ -62,7 +65,7 @@ function play(event){
         
         else if(event.currentTarget.id === "rock" && compPlay === "paper"){
             report.innerHTML = '(user) <i class="fa-solid fa-hand-fist fa-rotate-90"></i> <span> VS </span> <i class="fa-solid fa-hand"></i> (comp) <p class="lose">YOU lOSE</p>'
-            rock.style.backgroundColor = "red"
+            rock.style.backgroundColor = "red";
             paper.style.backgroundColor = "rgb(55, 54, 54)";
             scissors.style.backgroundColor = "rgb(55, 54, 54)";
             compWin ++
@@ -120,7 +123,6 @@ function play(event){
     }
     user.textContent = userWin;
     comp.textContent = compWin;
-
 }
 
 rock.addEventListener("click", roundFunction);
@@ -136,7 +138,6 @@ restart.addEventListener("click" , () => {
     userWin = 0;
     user.textContent = userWin;
     comp.textContent = compWin;
-    round = 0;
     rock.style.backgroundColor = "rgb(55, 54, 54)";
     paper.style.backgroundColor = "rgb(55, 54, 54)";
     scissors.style.backgroundColor = "rgb(55, 54, 54)";
